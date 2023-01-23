@@ -44,6 +44,12 @@ final stopwatch = Stopwatch();
     }
     notifyListeners();
   }
+  
+  void newGame() {
+    stopwatch.reset();
+    opacityList = [1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0];
+    notifyListeners();
+  }
 }
 
 class MyHomePage extends StatefulWidget {
@@ -105,6 +111,7 @@ class Score extends StatelessWidget {
           ElevatedButton(
             child: Text('Nem Game'),
             onPressed: () {
+              appState.newGame();
               Navigator.pop(context);
             },
           ),
